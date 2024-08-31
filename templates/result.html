@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+
+    <title>Prediction Result</title>
+    <style>
+        /* Additional CSS styles specific to result.html */
+         /* Reset default margin and padding */
+    
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* background: linear-gradient(to right, #2980b9, #6dd5fa); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header background */
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; /* Adjust height as needed */
+            background: linear-gradient(to right, #3498db, #9b59b6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-text {
+            color: #090000; /* White color for the header text */
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 20px;
+        }
+
+        .container{
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+    
+            background: linear-gradient(to right, #3498db, #9b59b6);
+            
+      
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .prediction-box {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .anemia {
+            background-color: #e74c3c; /* Red color for anemia */
+            color: #fff;
+        }
+
+        .healthy {
+            background-color: #2ecc71; /* Green color for healthy prediction */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-background">
+        <h1 class="header-text">Anemia Detector</h1>
+    </div>
+
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="prediction-box {% if prediction == 'Anemia' %}anemia{% else %}healthy{% endif %}">
+            {{ prediction }}
+        </div>
+    </div>
+</body>
+</html>
